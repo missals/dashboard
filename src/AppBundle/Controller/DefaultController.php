@@ -47,4 +47,25 @@ class DefaultController extends Controller
     {
         return $this->render('AppBundle:Default:ocean.html.twig');
     }
+    
+    /**
+     * @Route("/bttn", name="bttn")
+     */
+    public function bttnAction(Request $request)
+    {
+        # Implement bttn action
+
+        $secret = $request->request->get('secret', null);
+
+        if ($secret == 'bigsecret'){
+
+            return $this->render('AppBundle:Default:bttn.html.twig');
+
+        } else {
+
+            return $this->render('AppBundle:Default:index.html.twig');
+
+        }
+
+    }
 }
